@@ -8,9 +8,11 @@ export const Generator = () => {
     const [passLength, setPassLength] = useState(10);
     const [generatedPassword, setGeneratedPassword] = useState('');
 
-    const handleSliderChange = (value: number) => {
+    const handleSliderChange = (values: number[]) => {
+        // Si votre Slider n'utilise qu'une seule valeur, vous pouvez simplement prendre la première valeur du tableau
+        const value = values[0];
         setPassLength(value);
-    };
+      };
 
     const generatePassword = (length: number): string => {
         const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}[]';
